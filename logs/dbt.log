@@ -1,0 +1,33 @@
+[0m02:06:44.399083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a99f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a70490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a73dc0>]}
+
+
+============================== 02:06:44.416745 | 704dfc59-7b91-462e-ba88-de1691a0d70a ==============================
+[0m02:06:44.416745 [info ] [MainThread]: Running with dbt=1.11.11
+[0m02:06:44.418900 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'profiles_dir': '/Users/kara/.dbt', 'introspect': 'True', 'write_json': 'True', 'log_path': 'logs', 'target_path': 'None', 'fail_fast': 'False', 'warn_error': 'None', 'printer_width': '80', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_format': 'default', 'version_check': 'True', 'no_print': 'None', 'log_cache_events': 'False', 'use_colors': 'True', 'invocation_command': 'dbt init', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None'}
+[0m02:07:10.242327 [debug] [MainThread]: Starter project path: /Users/kara/Desktop/dagster-mongodb/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m02:07:10.279086 [info ] [MainThread]: 
+Your new dbt project "dbttransform" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m02:07:10.280074 [info ] [MainThread]: Setting up your profile.
+[0m02:07:18.216010 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m02:07:18.218323 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m02:07:18.219460 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m02:08:29.731169 [info ] [MainThread]: Profile dbttransform written to /Users/kara/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m02:08:29.766659 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 105.61085, "process_in_blocks": "0", "process_kernel_time": 1.208001, "process_mem_max_rss": "173379584", "process_out_blocks": "0", "process_user_time": 5.4719}
+[0m02:08:29.769521 [debug] [MainThread]: Command `dbt init` succeeded at 02:08:29.769023 after 105.61 seconds
+[0m02:08:29.770465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a99f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11fa7edd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107787040>]}
+[0m02:08:29.772524 [debug] [MainThread]: Flushing usage events
+[0m02:08:31.222660 [debug] [MainThread]: An error was encountered while trying to flush usage events
