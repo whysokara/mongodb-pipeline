@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: mongodb_movies
+    database: MONGODB
+    schema: RAW
+
+    tables:
+      - name: RAW_MOVIES
+        description: "A raw movies from mongodb sample data"
+        
