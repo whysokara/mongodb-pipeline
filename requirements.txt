@@ -9,7 +9,7 @@ dagster-dbt
 
 #Extract and Load
 pymongo
-snowflake-connector-python
+snowflake-connector-python[pandas]
 pandas
 
 #Utilities
