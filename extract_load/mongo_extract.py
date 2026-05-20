@@ -1,10 +1,18 @@
 import pymongo
 import certifi
 import pandas as pd
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 ca = certifi.where()
+uri = os.getenv("MONGO_URI")
 
-uri = "mongodb+srv://imhkara_db_user:ydlWD7YBXWFRKR6S@my-cluster.ho8yevg.mongodb.net/"
+if not uri:
+    raise ValueError("MONGO_URI not found in .env file")
+
 client = pymongo.MongoClient(uri, tlsCAFile=ca)
 db = client["sample_mflix"]
 movies_collection = db["movies"]
