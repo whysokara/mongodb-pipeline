@@ -16,9 +16,9 @@ clean-targets:
 
 models:
   dbttransform:
-    raw:
-      +materialized: view
-      +schema: raw
     staging:
-      +materialized: table
+      +materialized: view
       +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts
