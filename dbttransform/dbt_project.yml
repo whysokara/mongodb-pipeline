@@ -18,5 +18,7 @@ models:
   dbttransform:
     raw:
       +materialized: view
+      +schema: raw
     staging:
       +materialized: table
+      +schema: staging
