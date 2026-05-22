@@ -16,8 +16,15 @@ dagster-mongodb/
 │   ├── mongo_extract.py        # Logic to pull sample_mflix data from MongoDB
 │   └── snowflake_load.py       # Logic to upload raw data into Snowflake
 │
-├── dbt_transform/              # Step 2: dbt project for Transformations
-│   └── ... (to be initialized via dbt init)
+├── dbttransform/               # Step 2: dbt project for Transformations
+│   ├── dbt_project.yml         # dbt project configuration
+│   ├── profiles.yml            # Connection profiles (uses env vars)
+│   └── models/
+│       ├── staging/            # Staging: Initial cleaning & casting (Views)
+│       │   ├── stg_movies.sql
+│       │   └── sources.yml
+│       └── marts/              # Marts: Business-ready data (Tables)
+│           └── mart_movies.sql
 │
 ├── orchestration/              # Step 3: Dagster for Orchestration
 │   └── ... (to be initialized)
@@ -42,11 +49,17 @@ dagster-mongodb/
 - [x] **Data Integrity:** Implemented string-only loading for the RAW layer to avoid conversion errors.
 - [x] **Pipeline Test:** Successfully moved data from MongoDB to Snowflake `RAW_MOVIES` table.
 
-### 3. dbt Transformation (Next Step)
-- [ ] Initialize dbt project using `dbt init dbt_transform`.
-- [ ] Configure `profiles.yml` for Snowflake connection.
-- [ ] Create staging models to clean raw movie data.
-- [ ] Create mart models for BI consumption.
+### 3. dbt Transformation (Complete)
+- [x] **Project Scaffolding:** Initialized dbt project as `dbttransform`.
+- [x] **Staging Layer:** Created `stg_movies` to handle data type casting (String -> Number/Date).
+- [x] **Marts Layer:** Created `mart_movies` with business logic (e.g., movie decades).
+- [x] **Clean Runs:** Verified successful `dbt run` for both views and tables.
+
+### 4. Orchestration (Next Step)
+- [ ] Initialize Dagster project.
+- [ ] Create assets for MongoDB extraction.
+- [ ] Integrate dbt models as Dagster assets.
+- [ ] Schedule the full end-to-end pipeline.
 
 ## Getting Started
 
@@ -78,4 +91,10 @@ dagster-mongodb/
 5. Run the full extraction and load process:
    ```bash
    python extract_load/mongo_extract.py
+   ```
+
+6. Run dbt transformations:
+   ```bash
+   cd dbttransform
+   dbt run
    ```
